@@ -34,6 +34,19 @@ button:hover {
   overflow-y: hidden;
   z-index: 0;
 }
+.time{
+    position:absolute;
+    top:50px;
+    right: 50px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(219, 172, 219, 0.623);
+    border-radius: 90px 2px 2px 90px;
+}
+.curr-time{
+    font-size: x-large;
+}
 main {
     
   display: flex;

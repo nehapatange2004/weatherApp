@@ -1,9 +1,9 @@
 const handleSearch = async () => {
     try {
-        
+
         const city = document.querySelector("#searchBox").value;
         const url = `https://api.allorigins.win/raw?url=${encodeURIComponent(`https://wttr.in/${city}?format=j1`)}`;
-       
+
         fetch(url)
             .then((res) => res.json())
             .then((data) => {
@@ -14,10 +14,21 @@ const handleSearch = async () => {
                 document.querySelector("#city").textContent = `${city}`;
             })
             .catch((err) => console.error("Error:", err));
-        
+
         console.log(`The weather api is called for city: ${city}`);
         // console.log(`respose: ${response}`)
     } catch (err) {
         console.log("err", err);
     }
 }
+
+function updateTime() {
+  const today = new Date();
+  const time = today.toLocaleTimeString();
+  // console.log(time);
+
+  document.querySelector(".curr-time").textContent = time;
+}
+
+setInterval(updateTime, 1000);
+
